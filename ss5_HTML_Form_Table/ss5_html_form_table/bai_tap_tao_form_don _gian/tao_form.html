@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tao_form</title>
+
+    <style>
+        .basic{
+            color: blue;
+        }
+
+        .advanced{
+            color: orange;
+        }
+    </style>
+
+
+</head>
+<body>
+    <form method="get" action="">
+        <h2 style="color: white; background: red;text-align: center">SỞ THÍCH CỦA BẠN</h2>
+        <table cellpadding="5">
+            <tr>
+                <td>
+        <label for="name" class="basic">Họ và tên</label>
+                </td>
+                <td>
+        <input type="text" name="yourname" size="40" id="name">
+                </td>
+            </tr>
+            <tr>
+                <td>
+        <label for="email" class="basic">Email</label>
+                </td>
+                <td>
+        <input type="email" name="email" size="30" id="email">
+                </td>
+            </tr>
+            <tr>
+                <td>
+        <label class="basic">Sở thích</label>
+                </td>
+                <td>
+        <div class="advanced">
+        <input type="checkbox" name="hobby">Thể thao
+        <input type="checkbox" name="hobby">Âm nhạc
+        <input type="checkbox" name="hobby">Đọc sách<br>
+        <input type="checkbox" name="hobby">Lướt web
+        <input type="checkbox" name="hobby">Chơi game
+        <input type="checkbox" name="hobby">Điện ảnh<br>
+        <input type="checkbox" name="hobby">Du lịch<br>
+        </div>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+            <td>
+        <input type="submit" value="Gửi thông tin">
+        <input type="reset" value="Nhập lại">
+            </td>
+            </tr>
+        </table>
+    </form>
+    <hr>
+    <form>
+        <h2 style="color: blue;background: aquamarine">ĐĂNG KÝ HỌC VIÊN</h2>
+        <div class="basic">
+        <table cellpadding="5">
+            <tr>
+                <td>
+                    <label for="name1">Họ và tên</label>
+                </td>
+                <td>
+                    <input type="text" name="yourname1" size="40" id="name1">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="birthday">Ngày sinh</label>
+                </td>
+                <td>
+                    <input type="text" name="birthday" size="30" id="birthday">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                <label>Giới tính</label>
+                </td>
+                <td>
+                    <input type="radio" name="gender">Nam
+                    <input type="radio" name="gender">Nữ
+                </td>
+            </tr>
+            <tr>
+                <td>
+                <label for="address">Địa chỉ</label>
+                </td>
+                <td>
+                    <textarea rows="5"cols="50" id="address"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Lớp</label>
+                </td>
+                <td>
+                    <select name="lophoc">
+                        <option>--Chọn lớp--</option>
+                        <option>--Lớp 1A--</option>
+                        <option>--Lớp 1B--</option>
+                        <option>--Lớp 1C--</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                <label for="email1">Email</label>
+                </td>
+                <td>
+                    <input type="email" name="email1" size="30" id="email1">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="phone">Điện thoại</label>
+                </td>
+                <td>
+                    <input type="text" name="phone" size="30" id="phone">
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit"value="Đăng ký">
+                    <input type="reset"value="Nhập lại">
+                </td>
+            </tr>
+        </table>
+        </div>
+
+    </form>
+</body>
+</html>
