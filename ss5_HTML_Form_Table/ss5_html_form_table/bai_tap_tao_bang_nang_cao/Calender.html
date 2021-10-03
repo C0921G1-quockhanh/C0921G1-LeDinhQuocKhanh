@@ -20,8 +20,12 @@
             text-align: center;
             border: 2px solid gray;
         }
-        tr:nth-child(n+2){
+        tr:nth-child(n+3){
             font-weight: bold;
+        }
+        .special td{
+            border-left: hidden;
+            border-right: hidden;
         }
     </style>
 </head>
@@ -37,7 +41,7 @@
             <th style="background: orange">T.Sáu</th>
             <th style="background: blue">T.Bảy</th>
         </tr>
-        <tr>
+        <tr class="special">
             <td style="color: red">Sun</td>
             <td>Mon</td>
             <td>Tue</td>
