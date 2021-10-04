@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <select onchange="do_something()" id="hobby">
+        <option value="Football">Football</option>
+        <option value="Badminton">Badminton</option>
+        <option value="Swimming">Swimming</option>
+        <option value="Video Games">Video Games</option>
+    </select>
+
+    <script>
+        function do_something() {
+            var selectedHobby = document.getElementById("hobby").value;
+            alert(selectedHobby)
+
+        }
+    </script>
+
+</body>
+</html>
