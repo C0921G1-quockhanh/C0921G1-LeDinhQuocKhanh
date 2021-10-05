@@ -50,15 +50,15 @@
 
     function do_something() {
         let amount = document.getElementById("Amount").value;
-        let from = document.getElementById("From_Currency").value;
-        let to = document.getElementById("To_Currency").value;
+        let fromCurrency = document.getElementById("From_Currency").value;
+        let toCurrency = document.getElementById("To_Currency").value;
 
-        if (from=="VND" && to=="USD"){
+        if (fromCurrency=="VND" && toCurrency=="USD"){
             let result = amount / 23000;
            document.write("Giá trị qui đổi là " + result)
         }
         else
-            if (from=="VND" && to=="KRW"){
+            if (fromCurrency=="VND" && toCurrency=="KRW"){
             let result1 = amount / 19.18;
             document.write("Giá trị qui đổi là " + result1)
         }
