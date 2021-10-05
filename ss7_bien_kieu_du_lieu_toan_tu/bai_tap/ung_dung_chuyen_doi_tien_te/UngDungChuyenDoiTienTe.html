@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ung_dung_chuyen_doi_tien_te</title>
+
+    <style>
+        table{
+            width: 60%;
+            border-collapse: collapse;
+        }
+        td{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <table border="2" cellpadding="5">
+            <tr>
+                <th>Amount</th>
+                <th>From Currency</th>
+                <th>To Currency</th>
+                <th></th>
+            </tr>
+            <tr>
+                <td>
+                    <input type="number" name="Amount" id="Amount" size="40">
+                </td>
+                <td>
+                    <select id="From_Currency">
+                        <option value="VND">VND</option>
+                    </select>
+                </td>
+                <td>
+                    <select id="To_Currency">
+                        <option value="USD">USD</option>
+                        <option value="KRW">KRW</option>
+                    </select>
+                </td>
+                <td>
+                    <input type="button" value="Convert" onclick="do_something()">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+
+<script>
+
+    function do_something() {
+        let amount = document.getElementById("Amount").value;
+        let from = document.getElementById("From_Currency").value;
+        let to = document.getElementById("To_Currency").value;
+
+        if (from=="VND" && to=="USD"){
+            let result = amount / 23000;
+           document.write("Giá trị qui đổi là " + result)
+        }
+        else
+            if (from=="VND" && to=="KRW"){
+            let result1 = amount / 19.18;
+            document.write("Giá trị qui đổi là " + result1)
+        }
+
+    }
+
+</script>
+</body>
+</html>

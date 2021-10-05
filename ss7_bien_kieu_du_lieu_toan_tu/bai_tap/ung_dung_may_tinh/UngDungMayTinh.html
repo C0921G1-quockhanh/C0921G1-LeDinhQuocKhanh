@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ung_dung_may_tinh</title>
+
+    <style>
+        table{
+            border-collapse: collapse;
+            width: 30%;
+        }
+        td{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<form>
+    <table border="1" cellpadding="5">
+        <tr>
+            <td colspan="2">
+                <input type="number" id="first_number" size="40">
+            </td>
+            <td colspan="2">
+                <input type="number" id="second_number" size="40">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" value="Addition(+)" onclick="phep_cong()">
+            </td>
+            <td>
+                <input type="button" value="Subtraction(-)" onclick="phep_tru()">
+            </td>
+            <td>
+                <input type="button" value="Multiplication(x)" onclick="phep_nhan()">
+            </td>
+            <td>
+                <input type="button" value="Division(/)" onclick="phep_chia()">
+            </td>
+        </tr>
+    </table>
+
+    <script>
+
+        function phep_cong() {
+            let inputFirstNumber = document.getElementById("first_number").value;
+            let inputSecondNumber = document.getElementById("second_number").value;
+
+            let firstNumber = parseInt(inputFirstNumber);
+            let secondNumber = parseInt(inputSecondNumber);
+
+            let resultAddition = firstNumber + secondNumber;
+            alert("Giá trị của phép cộng là " + resultAddition)
+
+
+        }
+
+        function phep_tru() {
+            let inputFirstNumber = document.getElementById("first_number").value;
+            let inputSecondNumber = document.getElementById("second_number").value;
+
+            let firstNumber = parseInt(inputFirstNumber);
+            let secondNumber = parseInt(inputSecondNumber);
+
+            let resultSubtraction = firstNumber - secondNumber;
+            alert("Giá trị của phép trừ là " + resultSubtraction)
+
+        }
+
+        function phep_nhan() {
+            let inputFirstNumber = document.getElementById("first_number").value;
+            let inputSecondNumber = document.getElementById("second_number").value;
+
+            let firstNumber = parseInt(inputFirstNumber);
+            let secondNumber = parseInt(inputSecondNumber);
+
+            let resultMultiplication = firstNumber * secondNumber;
+            alert("Giá trị của phép trừ là " + resultMultiplication)
+
+        }
+
+        function phep_chia() {
+            let inputFirstNumber = document.getElementById("first_number").value;
+            let inputSecondNumber = document.getElementById("second_number").value;
+
+            let firstNumber = parseInt(inputFirstNumber);
+            let secondNumber = parseInt(inputSecondNumber);
+
+            let resultDivision = firstNumber / secondNumber;
+            alert("Giá trị của phép trừ là " + resultDivision)
+
+        }
+
+
+
+
+    </script>
+</form>
+</body>
+</html>

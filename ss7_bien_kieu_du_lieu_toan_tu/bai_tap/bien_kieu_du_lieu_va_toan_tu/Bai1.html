@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai_1</title>
+</head>
+<body>
+
+
+
+<script>
+    let inputPhysics = prompt("Nhập điểm môn vật lí của bạn:");
+    let inputChemistry = prompt("Nhập điểm môn hóa học của bạn:");
+    let inputBiology = prompt("Nhập điểm môn sinh học của bạn");
+
+    let Physics = parseInt(inputPhysics);
+    let Chemistry = parseInt(inputChemistry);
+    let Biology = parseInt(inputBiology);
+
+    let total = Physics + Chemistry + Biology;
+    alert("The total score of three subjects is " + total);
+
+    let average = total / 3;
+    alert("The average is " + average)
+
+</script>
+</body>
+</html>
