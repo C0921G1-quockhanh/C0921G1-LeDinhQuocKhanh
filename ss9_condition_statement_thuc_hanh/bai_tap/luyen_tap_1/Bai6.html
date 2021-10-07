@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <script>
+        let product = prompt("Type your product:");
+        let value = parseFloat(prompt("The value of 1 product is: "));
+        let quantity = parseInt(prompt("How many products you sold?"));
+
+        let income = value * quantity;
+
+        if (quantity < 50) {
+            alert("Your commission is " + (income * 5 / 100));
+        } else if (quantity < 100) {
+            alert("Your commission is " + (income * 10 / 100));
+        } else {
+            alert("Your commission is " + (income * 20 / 100));
+        }
+    </script>
+</body>
+</html>

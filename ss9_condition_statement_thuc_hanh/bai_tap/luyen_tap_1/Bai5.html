@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let attendance = parseFloat(prompt("Nhập điểm chuyên cần của bạn: "));
+        let middleScore = parseFloat(prompt("Nhập điểm thi giữa kì của bạn: "));
+        let finalScore = parseFloat(prompt("Nhập điểm thi cuối kì của bạn"));
+
+        let result = attendance * 0.2 + middleScore * 0.2 + finalScore * 0.6;
+
+        if (result >= 8.5) {
+            alert("Grade A");
+        } else if (result >= 7) {
+            alert("Grade B");
+        } else if (result >= 5.5) {
+            alert("Grade C")
+        } else if (result >= 4) {
+            alert("Grade D")
+        } else {
+            alert("Goodbye!")
+        }
+    </script>
+</body>
+</html>

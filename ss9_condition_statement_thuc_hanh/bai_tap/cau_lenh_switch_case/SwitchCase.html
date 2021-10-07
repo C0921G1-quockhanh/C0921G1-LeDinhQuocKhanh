@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        td {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <table border="2" cellpadding="5">
+            <tr>
+                <td>
+                    <input type="text" size="30" placeholder="Nhập tháng vào đây" id="month">
+                </td>
+                <td>
+                    <input type="button" value="Tính số ngày" onclick="dayOfMonth()">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" id="answer">
+                    <input type="text" size="50">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+
+<script>
+    function dayOfMonth() {
+        let month = parseInt(document.getElementById("month").value);
+        switch (month) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                document.getElementById("answer").innerHTML = "Tháng " + month + " có 31 ngày";break;
+            case 2:
+                document.getElementById("answer").innerHTML = "Tháng " + month + " có 28 hoặc 29 ngày";break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                document.getElementById("answer").innerHTML = "Tháng " + month + " có 30 ngày";break;
+            default:
+                document.getElementById("answer").innerHTML = "Xin nhập đúng tháng!";
+        }
+    }
+
+
+</script>
+
+
+</body>
+</html>

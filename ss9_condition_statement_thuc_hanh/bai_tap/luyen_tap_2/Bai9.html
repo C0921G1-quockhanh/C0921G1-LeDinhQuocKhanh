@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <script>
+        let a = parseInt(prompt("Nhập vào giá trị cạnh đầu tiên của tam giác: "));
+        let b = parseInt(prompt("Nhập vào giá trị cạnh thứ hai của tam giác: "));
+        let c = parseInt(prompt("Nhập vào giá trị cạnh còn lại của tam giác: "));
+
+        let firstCondition = a + b > c;
+        let secondCondition = b + c > a;
+        let thridCondition = a + c > b;
+
+        if (a > 0 && b > 0 && c > 0) {
+            if (firstCondition && secondCondition && thridCondition) {
+                alert("Đây là 3 cạnh của một tam giác");
+            } else {
+                alert("Đây chưa phải là tam giác");
+            }
+        } else {
+            alert("Mời bạn nhập lại giá trị cho 3 cạnh tam giác");
+        }
+    </script>
+</body>
+</html>

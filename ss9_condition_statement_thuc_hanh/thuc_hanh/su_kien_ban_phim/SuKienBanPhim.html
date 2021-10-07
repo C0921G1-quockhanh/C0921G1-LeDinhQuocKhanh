@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="docReady()">
+
+    <img src="doramon.png" id="doraemon">
+
+    <script>
+        let doraemon = document.getElementById("doraemon");
+        doraemon.style.position = "relative";
+        doraemon.style.top = "0px";
+        doraemon.style.left = "0px";
+
+        function upArrowPressed() {
+            doraemon.style.top = parseInt(doraemon.style.top) - 5 + "px";
+
+        }
+        function downArrowPressed() {
+            doraemon.style.top = parseInt(doraemon.style.top) + 5 + "px";
+
+        }
+        function leftArrowPressed() {
+            doraemon.style.left = parseInt(doraemon.style.left) - 5 + "px";
+
+        }
+        function rightArrowPressed() {
+            doraemon.style.left = parseInt(doraemon.style.left) + 5 +"px";
+
+        }
+
+        function moveSelection(evt) {
+            switch (evt.keyCode) {
+                case 37:
+                    leftArrowPressed();break;
+                case 38:
+                    upArrowPressed();break;
+                case 39:
+                    rightArrowPressed();break;
+                case 40:
+                    downArrowPressed();break;
+
+            }
+
+        }
+
+        function docReady() {
+            window.addEventListener("keydown",moveSelection)
+
+        }
+    </script>
+</body>
+</html>
