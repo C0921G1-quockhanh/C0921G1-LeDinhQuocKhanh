@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        p{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <p id="demo"></p>
+
+    <script>
+        let sout = "<table border='1' cellpadding='5' cellspacing='0' width='50%'>";
+        for (let i = 1; i <= 10; i++) {
+            sout = sout + "<tr>";
+            for (let j = 1; j <= 10; j++) {
+                sout = sout + "<td>" + i * j + "</td>";
+            } sout = sout + "</tr>"
+        } sout = sout + "</table>";
+
+        document.getElementById("demo").innerHTML = sout;
+    </script>
+</body>
+</html>
