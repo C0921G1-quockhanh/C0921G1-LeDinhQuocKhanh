@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2 style="position: absolute; left: 220px; top: 200px">Do you love me?</h2>
+    <input type="button" value="Yes" style="position: absolute; left: 240px; top: 260px" onclick="yesClick()">
+    <input type="button" value="No" style="position: absolute; left: 320px; top: 260px" onmouseover="noClick()" id="lonely">
+
+    <script>
+        function yesClick() {
+            alert("You are mine!");
+
+        }
+        function noClick() {
+            let lonely = document.getElementById("lonely");
+            let a = Math.floor(Math.random()*(100-50));
+
+
+            lonely.style.top = parseInt(lonely.style.top) + a + "px";
+            lonely.style.left = parseInt(lonely.style.left) + a + "px";
+
+
+        }
+    </script>
+</body>
+</html>

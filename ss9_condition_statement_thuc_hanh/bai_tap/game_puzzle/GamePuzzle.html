@@ -11,7 +11,7 @@
     </style>
 </head>
 <body>
-<table border="2" cellpadding="3">
+<table border="2" cellpadding="3" id="special">
     <tr>
         <td><img src="images/bruyne1.jpg" id="img1" width="150px" onclick="changeImg(this.id)"></td>
     </tr>
@@ -71,23 +71,33 @@
             if (imgObj1.getAttribute("src") === "images/bruyne1.jpg" &&
                 imgObj2.getAttribute("src") === "images/bruyne2.jpg" &&
                 imgObj3.getAttribute("src") === "images/bruyne3.jpg") {
-
+            let special = document.getElementById("special");
+            special.style.borderColor = "red";
+            special.style.borderWidth = "5px";
             } else if (imgObj1.getAttribute("src") === "images/haaland1.jpg" &&
                        imgObj2.getAttribute("src") === "images/haaland2.jpg" &&
                        imgObj3.getAttribute("src") === "images/haaland3.jpg") {
-
+                let special = document.getElementById("special");
+                special.style.borderColor = "red";
+                special.style.borderWidth = "5px";
             } else if (imgObj1.getAttribute("src") === "images/messi1.jpg" &&
                        imgObj2.getAttribute("src") === "images/messi2.jpg" &&
                        imgObj3.getAttribute("src") === "images/messi3.jpg") {
-
+                let special = document.getElementById("special");
+                special.style.borderColor = "red";
+                special.style.borderWidth = "5px";
             } else if (imgObj1.getAttribute("src") === "images/neymar1.jpg" &&
                        imgObj2.getAttribute("src") === "images/neymar2.jpg" &&
                        imgObj3.getAttribute("src") === "images/neymar3.jpg") {
-
+                let special = document.getElementById("special");
+                special.style.borderColor = "red";
+                special.style.borderWidth = "5px";
             } else if (imgObj1.getAttribute("src") === "images/ronaldo1.jpg" &&
                        imgObj2.getAttribute("src") === "images/ronaldo2.jpg" &&
                        imgObj3.getAttribute("src") === "images/ronaldo3.jpg") {
-
+                let special = document.getElementById("special");
+                special.style.borderColor = "red";
+                special.style.borderWidth = "5px";
             }
 
         }
