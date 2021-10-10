@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        td {
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <table border="2" cellpadding="3">
+        <tr>
+            <td><input type="range" id="good" min="0" max="1" value="0" onclick="changeValue(this.id)"></td>
+            <td style="font-weight: bold">GOOD</td>
+        </tr>
+        <tr>
+            <td><input type="range" id="cheap" min="0" max="1" value="0" onclick="changeValue(this.id)"></td>
+            <td style="font-weight: bold">CHEAP</td>
+        </tr>
+        <tr>
+            <td><input type="range" id="fast" min="0" max="1" value="0" onclick="changeValue(this.id)"></td>
+            <td style="font-weight: bold">FAST</td>
+        </tr>
+    </table>
+
+    <script>
+        let Obj1 = document.getElementById("good");
+        let Obj2 = document.getElementById("cheap");
+        let Obj3 = document.getElementById("fast");
+
+        function changeValue(choice) {
+            switch (choice) {
+                case "good":
+                    if (Obj2.value === "1") {
+                        Obj3.value = 0;
+                    } break;
+                case "cheap":
+                    if (Obj3.value === "1") {
+                        Obj1.value = 0;
+                    } break;
+                case "fast":
+                    if (Obj1.value === "1") {
+                        Obj2.value = 0;
+                    }
+            }
+
+        }
+    </script>
+</body>
+</html>
