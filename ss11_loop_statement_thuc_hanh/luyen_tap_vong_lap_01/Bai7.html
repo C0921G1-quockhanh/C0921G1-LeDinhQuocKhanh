@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let i = 1, result = "";
+
+        for (; i <= 100; i++) {
+
+            let dk1 = i % 3 === 0;
+            let dk2 = i % 5 === 0;
+
+            if (dk1 && dk2) {
+                result += " , " + "FizzBuzz";
+            } else {
+                if (dk1) {
+                    result += " , " + "Fizz";
+                } else if (dk2) {
+                    result += " , " + "Buzz";
+                }
+            }
+        }
+        document.write(result);
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input type="button" value="play" onclick="playGame()">
+
+    <script>
+        function playGame() {
+            let valueRange = prompt("Nhập 1 khoảng giá trị bất kì", "0-10");
+            [min, max] = valueRange.split("-");
+            let firstNum = parseInt(min), secondNum = parseInt(max);
+            let random = Math.floor(Math.random()*(secondNum - firstNum)) + firstNum;
+
+
+            let value = parseInt(prompt("Nhập 1 giá trị trong khoảng bạn vừa chọn: "));
+            for (let i = 1; i < 3; i++) {
+                if (value === random) {
+                    alert("You are amazing!");
+                    break;
+                } else {
+                    if (value > random) {
+                        alert("Hãy nhập số bé hơn");
+                    } else {
+                        alert("Hãy nhập số lớn hơn");
+                    }
+                }
+                value = parseInt(prompt("Nhập 1 giá trị trong khoảng bạn vừa chọn: "));
+            }
+        }
+
+    </script>
+</body>
+</html>
