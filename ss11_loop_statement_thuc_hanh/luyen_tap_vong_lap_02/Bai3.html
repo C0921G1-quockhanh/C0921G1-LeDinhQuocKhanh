@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table {
+            width: 10%;
+        }
+        td {
+            text-align: center;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <script>
+        let sout = "<table cellpadding='3'>";
+        for (let i = 1; i <= 5; i++) {
+            sout = sout + "<tr>";
+            for (let j = 1; j <= i; j++) {
+                sout = sout + "<td>" + "*" + "</td>";
+            } sout = sout + "</tr>";
+        } sout = sout + "</table>";
+        document.getElementById("demo1").innerHTML = sout;
+
+        let sout2 = "<table cellpadding='3'>"
+        for (let i1 = 1; i1 <= 5; i1++) {
+            sout2 = sout2 + "<tr>";
+            for (let j1 = 1; j1 <= 6-i1; j1++) {
+                sout2 = sout2 + "<td>" + "*" + "</td>";
+            } sout2 = sout2 + "</tr>";
+        } sout2 = sout2 + "</table>";
+        document.getElementById("demo2").innerHTML = sout2;
+
+        let sout3 = "<table cellpadding='3'>"
+        for (let i2 = 1; i2 <= 5; i2++) {
+            sout3 = sout3 + "<tr>";
+            for (let j2 = 1; j2 <= 5; j2++) {
+                sout3 = sout3 + "<td>" + "*" + "</td>";
+            } sout3 = sout3 + "</tr>";
+        } sout3 = sout3 + "</table>";
+        document.getElementById("demo3").innerHTML = sout3;
+    </script>
+</body>
+</html>
