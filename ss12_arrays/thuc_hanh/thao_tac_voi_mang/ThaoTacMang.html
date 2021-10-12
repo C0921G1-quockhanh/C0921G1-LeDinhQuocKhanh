@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table{
+            width: 20%;
+            border-collapse: collapse;
+        }
+        td{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <table border="2" cellspacing="0" cellpadding="5">
+        <tr>
+            <td colspan="3"><h2 style="font-style: italic">Sample Screen:</h2></td>
+        </tr>
+        <tr>
+            <td><input type="text" size="40" id="element"></td>
+            <td><input type="button" value="Add" onclick="addElement()"></td>
+            <td><input type="button" value="Display" onclick="displayArray()"></td>
+        </tr>
+    </table>
+    <p id="demo"></p>
+
+    <script>
+        let x = 0;
+        let array = [];
+
+        function addElement() {
+            array[x] = document.getElementById("element").value;
+            alert("Element '" + array[x] + "' added at index " + x);
+            x++;
+            document.getElementById("element").value = "";
+
+        }
+
+        function displayArray() {
+            let e = "<hr>";
+            for (let i = 0; i < array.length; i++) {
+                e += "Element " + i + " = " + array[i] + "<br>";
+            }
+            document.getElementById("demo").innerHTML = e;
+
+        }
+    </script>
+</body>
+</html>
