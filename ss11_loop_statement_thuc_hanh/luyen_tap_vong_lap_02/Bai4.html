@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+        let data = "";
+       for (let i=1; i<=6; i++){
+           data += "<br>";
+           for (let j=1; j<=6; j++) {
+               if (i === 1 || i === 6 || j === 1 || j === 6) {
+                   data += "*"
+               } else {
+                   data += "&nbsp&nbsp";
+               }
+           }
+       }
+        document.getElementById("demo").innerHTML = data;
+    </script>
+</body>
+</html>

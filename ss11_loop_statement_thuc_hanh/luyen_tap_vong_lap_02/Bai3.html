@@ -17,6 +17,7 @@
     <p id="demo1"></p>
     <p id="demo2"></p>
     <p id="demo3"></p>
+    <p id="demo4"></p>
     <script>
         let sout = "<table cellpadding='3'>";
         for (let i = 1; i <= 5; i++) {
@@ -40,10 +41,27 @@
         for (let i2 = 1; i2 <= 5; i2++) {
             sout3 = sout3 + "<tr>";
             for (let j2 = 1; j2 <= 5; j2++) {
-                sout3 = sout3 + "<td>" + "*" + "</td>";
+                if (j2 <= (5-i2)){
+                    sout3 = sout3 + "<td>" + "&nbsp&nbsp" + "</td>";
+                } else {
+                    sout3 = sout3 + "<td>" + "*" + "</td>";
+                }
             } sout3 = sout3 + "</tr>";
         } sout3 = sout3 + "</table>";
         document.getElementById("demo3").innerHTML = sout3;
+
+        let sout4 = "<table cellpadding='3'>"
+        for (let i3 = 1; i3 <= 5; i3++) {
+            sout4 = sout4 + "<tr>";
+            for (let j3 = 1; j3 <= 5; j3++) {
+                if (j3 < i3) {
+                    sout4 = sout4 + "<td>" + "&nbsp&nbsp" + "</td>";
+                } else {
+                    sout4 = sout4 + "<td>" + "*" + "</td>";
+                }
+            } sout4 = sout4 + "</tr>";
+        } sout4 = sout4 + "</table>";
+        document.getElementById("demo4").innerHTML = sout4;
     </script>
 </body>
 </html>
