@@ -11,7 +11,9 @@
         function playGame() {
             let valueRange = prompt("Nhập 1 khoảng giá trị bất kì", "0-10");
             [min, max] = valueRange.split("-");
-            let firstNum = parseInt(min), secondNum = parseInt(max);
+            let firstNum = parseInt(min);
+            let secondNum = parseInt(max);
+
             let random = Math.floor(Math.random()*(secondNum - firstNum)) + firstNum;
 
 
