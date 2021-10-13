@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let arrA = Array(10);
+        for (let i = 0; i < arrA.length; i++) {
+            arrA[i] = Math.floor((Math.random()*20)+1);
+        }
+
+        let mangA = [];
+        for (let i = 0; i < arrA.length; i++) {
+            mangA.push(arrA[i]);
+        }
+        document.write("Giá trị các phần tử trong mảng A là: " + mangA.join(" "));
+
+
+        let arrB = Array(10);
+        for (let i = 0; i < arrB.length; i++) {
+            arrB[i] = Math.floor((Math.random()*20)+1);
+        }
+
+        let mangB = [];
+        for (let i = 0; i < arrB.length; i++) {
+            mangB.push(arrB[i]);
+        }
+        document.write("<br>" + "Giá trị các phần tử trong mảng B là: " + mangB.join(" "));
+
+        let mangC = mangA.concat(mangB);
+        document.write("<br>" + "Giá trị các phần tử trong mảng C là: " + mangC.join(" "))
+
+
+    </script>
+</body>
+</html>

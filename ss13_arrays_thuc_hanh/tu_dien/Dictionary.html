@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table{
+            border-collapse: collapse;
+            width: 20%;
+        }
+    </style>
+</head>
+<body>
+    <table border="2" cellpadding="3" cellspacing="0">
+        <tr>
+            <td colspan="3"><h2 style="font-style: italic">Your Dictionary:</h2></td>
+        </tr>
+        <tr>
+            <td><input type="text" size="40" placeholder="Eng" id="eng"></td>
+            <td><input type="text" size="40" placeholder="Vie" id="vie"></td>
+            <td><input type="button" value="Translate" onclick="engToVie()"></td>
+        </tr>
+    </table>
+
+    <script>
+
+        let result = "";
+        let eng = ["map", "government", "computer", "year", "information"];
+        let vie = ["bản đồ", "chính phủ", "máy tính", "năm", "thông tin"];
+
+        function engToVie() {
+            let checkWord = false;
+            let inputEng = document.getElementById("eng").value;
+            for (let i = 0; i < eng.length; i++) {
+                if (inputEng === eng[i]) {
+                    checkWord = true;
+                    result = vie[i];
+                    break;
+                }
+            } if (!checkWord) {
+                alert("The dictionary hasn't updated this word.");
+            }
+        document.getElementById("vie").value = result;
+        }
+    </script>
+</body>
+</html>

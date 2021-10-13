@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let arr = Array(10);
+        let result = [];
+        for (let i = 0; i < arr.length; i++) {
+            arr[i] = Math.floor((Math.random()*100)+1);
+        }
+
+        for (let i = 0; i < arr.length; i++) {
+            result.push(arr[i]);
+        }
+        document.write("10 phần tử của mảng lúc này là: " + result.join(" "));
+        let reArr = arr.reverse().join(" ");
+        document.write("<br>" + "Giá trị đảo ngược của 10 phần tử là: " + reArr);
+    </script>
+</body>
+</html>

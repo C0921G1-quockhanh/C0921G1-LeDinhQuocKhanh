@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let doDaiMang = parseInt(prompt("Nhập độ dài của mảng: "));
+        let value = [];
+        let arr = [];
+
+        for (let i = 0; i < doDaiMang; i++) {
+            value[i] = prompt("Enter an element: ");
+            arr.push(value[i]);
+        }
+        document.write("Giá trị các phần tử trong mảng lúc này là: " + arr.join(""));
+
+        let reArr = arr.reverse();
+        document.write("<br>" + "Giá trị sau khi thực đảo ngược là: " + reArr.join(""));
+
+    </script>
+</body>
+</html>

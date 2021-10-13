@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let arr = Array(10);
+        for (let i=0; i < arr.length; i++) {
+            arr[i] = Math.floor((Math.random()*100)+1);
+        }
+
+        let result = [arr[0]];
+        let max = arr[0];
+        let index = 0;
+        let total = arr[0];
+
+        for (let i = 1; i < arr.length; i++) {
+            result.push(arr[i]);
+            total += arr[i];
+            if (max < arr[i]){
+                max = arr[i];
+                index = i;
+            }
+        }
+        document.write("10 phần tử của mảng lúc này là: " + result.join(" "));
+        document.write("<br>" + "Trung bình cộng của các phần tử trong mảng là: " + (total/10));
+        document.write("<br>" + "Giá trị lớn nhất của mảng là " + max + " tại vị trí " + index);
+
+    </script>
+</body>
+</html>

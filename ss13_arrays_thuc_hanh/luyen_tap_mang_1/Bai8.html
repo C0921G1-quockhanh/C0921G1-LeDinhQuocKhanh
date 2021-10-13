@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let arr = Array(10);
+        for (let i = 0; i < arr.length; i++) {
+            arr[i] = Math.floor((Math.random()*20)+1);
+        }
+
+        let begin = [];
+        for (let i = 0; i < arr.length; i++) {
+            begin.push(arr[i]);
+        }
+        document.write("Giá trị các phần tử trong mảng vừa được tạo ra là: " + begin.join(" "));
+
+        let after = arr.sort(function (a,b) {
+            return b - a
+        })
+        document.write("<br>" + "Giá trị các phần tử trong mảng sau khi được sắp xếp là: " + after.join(" "));
+
+    </script>
+</body>
+</html>

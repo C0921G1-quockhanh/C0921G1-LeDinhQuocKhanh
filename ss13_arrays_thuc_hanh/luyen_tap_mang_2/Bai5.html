@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let wordsA = prompt("Nhập vào mảng kí tự A: ");
+        let wordsB = prompt("Nhập vào mảng kí tự B: ");
+
+        let strA = wordsA.toString();
+        let strB = wordsB.toString();
+        let kiemTraChuoi = null;
+
+        if (strA.length !== strB.length) {
+            alert("Hai chuỗi này có giá trị khác nhau!");
+        } else {
+            for (let i = 0; i < strA.length; i++) {
+                kiemTraChuoi = false;
+                if (strA[i] === strB[i]) {
+                    kiemTraChuoi = true;
+                }
+            } if (kiemTraChuoi) {
+                alert("Hai chuỗi này có giá trị giống nhau!");
+            } else {
+                alert("Hai chuỗi này có giá trị khác nhau!");
+            }
+        }
+    </script>
+</body>
+</html>

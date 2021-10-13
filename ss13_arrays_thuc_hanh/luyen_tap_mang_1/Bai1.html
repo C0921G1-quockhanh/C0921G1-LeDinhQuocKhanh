@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let str = Array(10);
+        let result = [];
+        let num = 0;
+
+        for (let i=0; i < str.length; i++){
+            str[i] = Math.floor((Math.random()*20)+1);
+        }
+
+        for (let i=0; i< str.length; i++) {
+            if (str[i] >= 10) {
+                result.push(str[i]);
+                num++;
+            }
+        }
+        document.write(num + " số nguyên lớn hơn hoặc bằng 10 là: " + result.join());
+    </script>
+</body>
+</html>

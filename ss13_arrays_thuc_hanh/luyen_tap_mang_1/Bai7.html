@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let arr = Array(10);
+        for (let i = 0; i < arr.length; i++) {
+            arr[i] = Math.floor((Math.random()*20)+1);
+        }
+        let random = parseInt(prompt("Enter a number:" ));
+
+        let begin = [];
+        for (let i = 0; i < arr.length; i++) {
+            begin.push(arr[i]);
+        }
+        alert("Giá trị các phần tử trong mảng vừa được tạo ra là: " + begin.join(" "));
+
+        let value = null;
+        for (let i = 0; i <arr.length; i++){
+            value = false;
+            if (random === arr[i]) {
+                value = true;
+                arr.splice(i,1);
+                arr.push(0);
+                break;
+            }
+        } if (value){
+            alert("Giá trị các phần tử trong mảng sau thay đổi là: " + arr.join(" "));
+        } else {
+            alert(random + " is not in the array");
+        }
+
+    </script>
+</body>
+</html>
