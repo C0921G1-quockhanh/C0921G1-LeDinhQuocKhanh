@@ -8,17 +8,17 @@
     <script>
         let words = prompt("Nhập vào một mảng kí tự: ");
         let str = words.toString();
-        alert("Độ dài của mảng là " + str.length);
 
-        let kiTu = [];
-        let soKiTu = 0;
+        let kiTuSo = [];
+        let soKiTuSo = 0;
         for (let i = 0; i < str.length; i++) {
             if (0 <= str[i] && str[i] <= 9) {
-                kiTu.push(str[i]);
-                soKiTu++;
+                kiTuSo.push(str[i]);
+                soKiTuSo++;
             }
         }
-        alert("Số kí tự số trong mảng là: " + soKiTu + " và giá trị lần lượt là: " + kiTu.join(" "));
+        document.write("Số kí tự số trong mảng là " + soKiTuSo + " và giá trị lần lượt là " + kiTuSo.join(" "));
+
     </script>
 </body>
 </html>
