@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        function checkNumber(character) {
+            if (0 <= character && character <= 9) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        let random = prompt("Enter an character: ");
+        document.write(checkNumber(random));
+    </script>
+</body>
+</html>

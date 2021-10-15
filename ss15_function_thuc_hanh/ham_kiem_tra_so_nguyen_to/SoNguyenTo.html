@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        function isPrime(arr) {
+            let result =[];
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] >= 2) {
+                    let soNguyenTo = true;
+                    for (let j = 2; j < arr[i]; j++) {
+                        if (arr[i] % j === 0) {
+                            soNguyenTo = false;
+                            break;
+                        }
+                    } if (soNguyenTo) {
+                        result.push(arr[i]);
+                    }
+                }
+            }
+            return result;
+        }
+
+        let arr1 = Array(10000);
+        for (let i = 0; i < arr1.length; i++){
+            arr1[i] = i;
+        }
+         let ketQua = isPrime(arr1);
+        document.write(ketQua.join(" - "));
+    </script>
+</body>
+</html>

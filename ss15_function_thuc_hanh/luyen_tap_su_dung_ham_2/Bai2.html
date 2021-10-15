@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        const PI = 3.14;
+        function getCircularArea(radius) {
+            let area = radius * radius * PI;
+            return "Diện tích hình tròn là " + area;
+        }
+        function getCircularPerimeter(radius) {
+            let perimeter = radius * 2 * PI;
+            return "Chu vi hình tròn là " + perimeter;
+        }
+
+        let inputRadius = Math.floor((Math.random()*50)+1);
+        document.write("Bán kính hình tròn là " + inputRadius + "<br>");
+        document.write(getCircularPerimeter(inputRadius) + "<br>");
+        document.write(getCircularArea(inputRadius));
+    </script>
+</body>
+</html>

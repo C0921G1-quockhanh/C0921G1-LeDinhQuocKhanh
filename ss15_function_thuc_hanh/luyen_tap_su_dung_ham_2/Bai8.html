@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        function reverseArray(arr) {
+            let reArr = arr.reverse();
+            return "Mảng sau khi được đảo ngược là " + reArr.join(" ");
+        }
+
+        let random = prompt("Nhập vào 1 mảng số nguyên bất kì: ");
+        let str = random.toString();
+
+        document.write(reverseArray(str));
+    </script>
+</body>
+</html>
+

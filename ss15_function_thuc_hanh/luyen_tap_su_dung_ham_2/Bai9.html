@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        function findCharacter(arr,character) {
+            let appear = 0;
+            for (let i = 0; i < arr.length; i++) {
+                if (character === arr[i]){
+                    appear++;
+                }
+            }
+            if (appear > 0) {
+                return "Số lần xuất hiện của kí tự là " + appear;
+            } else {
+                return -1;
+            }
+        }
+
+        let inputStr = prompt("Nhập 1 mảng kí tự: ");
+        let str = inputStr.toString();
+        let random = prompt("Nhập 1 kí tự bất kì: ");
+        document.write(findCharacter(str,random));
+
+    </script>
+</body>
+</html>

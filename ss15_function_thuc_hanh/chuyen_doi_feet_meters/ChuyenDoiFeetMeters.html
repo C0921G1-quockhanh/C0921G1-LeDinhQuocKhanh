@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 20%;
+        }
+        td,th {
+            text-align: center;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <table border="2" cellspacing="0" cellpadding="5">
+        <tr>
+            <th>Feet</th>
+            <th>Meters</th>
+        </tr>
+        <tr>
+            <td><input type="number" placeholder="Feet" oninput="feetToMeters(this.value)" id="feetToMeters"></td>
+            <td><input type="number" placeholder="Meters" oninput="metersToFeet(this.value)" id="metersToFeet"></td>
+        </tr>
+    </table>
+
+        <script>
+            function feetToMeters(feet) {
+                let chuyenDoiFeet = parseFloat(feet);
+                document.getElementById("metersToFeet").value = (chuyenDoiFeet * 0.305);
+            }
+
+            function metersToFeet(meters) {
+                let chuyenDoiMeters = parseFloat(meters);
+                document.getElementById("feetToMeters").value = (chuyenDoiMeters * 3.279);
+            }
+        </script>
+
+</body>
+</html>

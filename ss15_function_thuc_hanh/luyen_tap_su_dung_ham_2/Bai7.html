@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        function swap(num1,num2) {
+            let temp = num1;
+                num1 = num2;
+                num2 = temp;
+            return "Giá trị của 2 số sau khi hoán đổi là " + num1 + " - " +num2;
+        }
+
+        let firstNumber = parseInt(prompt("Enter first number: "));
+        let secondNumber = parseInt(prompt("Enter second number: "));
+        document.write(swap(firstNumber,secondNumber));
+    </script>
+</body>
+</html>

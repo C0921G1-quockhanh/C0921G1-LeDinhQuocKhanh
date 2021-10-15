@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        function compareNumbers(num1,num2) {
+            if (num1 > num2) {
+                return "Số thứ nhất lớn hơn số thứ hai";
+            } else {
+                let total = num1 + num2;
+                return "Tổng của 2 số là: " + total ;
+            }
+        }
+
+        let firstNum = parseInt(prompt("Nhập vào số đầu tiên: "));
+        let secondNum = parseInt(prompt("Nhập vào số thứ hai: "));
+
+        let check = compareNumbers(firstNum,secondNum);
+        document.write(check);
+
+    </script>
+</body>
+</html>

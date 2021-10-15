@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        function getFactorial(num) {
+            let factorial = 1;
+            for (let i = 1; i <= num; i++) {
+                factorial *= i;
+            }
+            return "Giai thừa của " + num + " là " + factorial;
+        }
+
+        let random = Math.floor((Math.random()*20)+1);
+        document.write(getFactorial(random));
+
+    </script>
+</body>
+</html>

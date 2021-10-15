@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let arr1 = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+        let arr2 = ["Ursa Minor", "Taurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+
+        function changeName(arr) {
+            let nameStar = prompt("Enter a name: ");
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] === nameStar) {
+                    arr[i] = arr2[i];
+                    return "Tên chòm sao tương ứng là: " + arr[i];
+                }
+            }
+            return "Enter a different name!";
+        }
+
+        let doFunction = changeName(arr1);
+        document.write(doFunction);
+        
+    </script>
+</body>
+</html>
