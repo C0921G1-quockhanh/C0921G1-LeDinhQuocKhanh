@@ -19,12 +19,14 @@
     <p id="demo"></p>
 
     <script>
-        let arr = Array(10).fill(Array(10));
+        let arr = Array(10);
         for (let i = 0; i < arr.length; i++) {
+            arr[i] = Array(10);
             for (let j = 0; j < arr[i].length; j++) {
                 arr[i][j] = ".";
             }
         }
+
         display();
         function display(){
             let tableString = "<table border='2' cellspacing='0' cellpadding='5'>"
@@ -101,7 +103,7 @@
                         alert("Người chơi 2 thắng!");
                     }
                 }
-            display();
+        display();
         }
 
 
