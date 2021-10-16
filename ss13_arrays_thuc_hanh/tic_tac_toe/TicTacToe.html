@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 30%;
+        }
+        td {
+            text-align: center;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <p id="demo"></p>
+
+    <script>
+        let arr = Array(10).fill(Array(10));
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < arr[i].length; j++) {
+                arr[i][j] = ".";
+            }
+        }
+        display();
+        function display(){
+            let tableString = "<table border='2' cellspacing='0' cellpadding='5'>"
+            for (let i = 0;i < arr.length; i++) {
+                tableString = tableString + "<tr>";
+                for (let j = 0; j < arr[i].length; j++) {
+                    tableString = tableString + "<td onclick='played("+i+","+j+")'>" + arr[i][j] + "</td>";
+                } tableString = tableString + "</tr>";
+            } tableString = tableString + "</table>";
+            document.getElementById("demo").innerHTML = tableString;
+        }
+
+
+        let player1 = true;
+        
+        function checkPlayed(i,j) {
+            if (arr[i][j] === "X" || arr[i][j] === "O") {
+                alert("Ô này bạn đã nhập rồi!");
+                return true;
+            } else {
+                return false;
+            }
+        }
+        
+        function checkWhoWin() {
+            for (let i = 0; i < arr.length; i++) {
+                for (let j = 0; j < arr[i].length; j++) {
+                    if (arr[i][j] === "X") {
+                        if (arr[i][j + 1] === "X" && arr[i][j + 2] === "X") {
+                            return true;
+                        }
+                        if (arr[i + 1][j] === "X" && arr[i + 2][j] === "X") {
+                            return true;
+                        }
+                        if (arr[i + 1][j + 1] === "X" && arr[i + 2][j + 2] === "X") {
+                            return true;
+                        }
+                        if (arr[i - 1][j + 1] === "X" && arr[i - 2][j + 2] === "X") {
+                            return true;
+                        }
+                    } else {
+                        if (arr[i][j] === "O") {
+                            if (arr[i][j + 1] === "O" && arr[i][j + 2] === "O") {
+                                return true;
+                            }
+                            if (arr[i + 1][j] === "O" && arr[i + 2][j] === "O") {
+                                return true;
+                            }
+                            if (arr[i + 1][j + 1] === "O" && arr[i + 2][j + 2] === "O") {
+                                return true;
+                            }
+                            if (arr[i - 1][j + 1] === "O" && arr[i - 2][j + 2] === "O") {
+                                return true;
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+        
+        function played(i,j) {
+            console.log(i,j)
+            if (player1 && !checkPlayed(i,j)){
+                arr[i][j] = "X";
+                player1 = false;
+                if (checkWhoWin()) {
+                    alert("Người chơi 1 thắng!");
+                }
+            } else if (!player1 && !checkPlayed(i,j)) {
+                    arr[i][j] = "O";
+                    player1 = true;
+                    if (checkWhoWin()) {
+                        alert("Người chơi 2 thắng!");
+                    }
+                }
+            display();
+        }
+
+
+    </script>
+</body>
+</html>
