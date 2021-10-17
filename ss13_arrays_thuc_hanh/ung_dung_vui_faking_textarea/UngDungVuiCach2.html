@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p>Type anything slowly</p>
+    <textarea rows="5" cols="50" id="demo"></textarea>
+
+    <script>
+        let str = "TÔI LÀ MỘT ĐỨA NGỐC!!";
+        let index = 0;
+
+        document.getElementById("demo").addEventListener("keydown",keydownFunction);
+        function keydownFunction(e) {
+            e.preventDefault();
+            if (index > str.length) {
+                index = 0;
+            }
+            index++;
+            document.getElementById("demo").value = str.substring(0,index);
+        }
+    </script>
+</body>
+</html>

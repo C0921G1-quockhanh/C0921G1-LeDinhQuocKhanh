@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        th {
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <table border="2" cellpadding="5" cellspacing="0">
+        <tr>
+            <th colspan="2">Add New Product</th>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" placeholder="New Product" id="newProduct">
+            </td>
+            <td>
+                <input type="button" value="Add" onclick="addNewProduct()">
+            </td>
+        </tr>
+    </table>
+    <p id="demo"></p>
+
+    <script>
+        let productList = ["Sony Xperia", "Samsung Galaxy", "Nokia 6", "Xiaomi Redmi Note 4", "Apple Iphone 13"];
+        display();
+        function display() {
+            let tableString = "<table border='2' cellpadding='5' cellspacing='0'>" +
+                    "<tr><th colspan='4'>Display All Products</th></tr>" +
+                    "<tr>" +
+                    "<td colspan='3'>Product Name</td>" +
+                    "<td>" + productList.length + " product" +"</td>" +
+                    "</tr>";
+            for (let i = 0; i < productList.length; i++) {
+                tableString += "<tr>" +
+                        "<td>" + productList[i] + "</td>" +
+                        "<td><input type='button' value='Edit' onclick='editProduct("+i+")'></td>" +
+                        "<td><input type='button' value='Delete' onclick='deleteProduct("+i+")'></td>" +
+                        "<td></td>" +
+                        "</tr>";
+            }
+            tableString += "</table>"
+            document.getElementById("demo").innerHTML = tableString;
+        }
+
+        function addNewProduct() {
+            let addNew = null;
+            let newProduct = document.getElementById("newProduct").value;
+            for (let i = 0; i < productList; i++) {
+                addNew = true;
+                if (newProduct === "" || newProduct === productList[i]) {
+                    addNew = false;
+                    break;
+                }
+            }
+            if (addNew) {
+                productList.push(newProduct);
+            } else {
+                alert("Please check the name of product!");
+            }
+            document.getElementById("newProduct").value = "";
+            display();
+        }
+
+        function editProduct(index) {
+            let newName = prompt("Enter the ideal name of product: ");
+            if (newName !== "" && newName !== productList[index]) {
+                productList[index] = newName;
+            }
+            display();
+        }
+
+        function deleteProduct(index) {
+            let conf = confirm("Are you sure to delete it?");
+            if (conf) {
+                productList.splice(index,1);
+            }
+        display();
+        }
+
+    </script>
+</body>
+</html>
