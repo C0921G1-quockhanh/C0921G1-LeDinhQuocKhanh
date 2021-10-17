@@ -52,22 +52,25 @@
         }
 
         function addNewProduct() {
-            let addNew = null;
+            let addNew = true;
             let newProduct = document.getElementById("newProduct").value;
-            for (let i = 0; i < productList; i++) {
-                addNew = true;
-                if (newProduct === "" || newProduct === productList[i]) {
-                    addNew = false;
-                    break;
+            if (newProduct !== "") {
+                for (let i = 0; i < productList.length; i++) {
+                    if (newProduct === productList[i]){
+                        addNew = false;
+                        break;
+                    }
                 }
+            } else {
+                addNew = false;
             }
             if (addNew) {
                 productList.push(newProduct);
+                display();
             } else {
                 alert("Please check the name of product!");
             }
             document.getElementById("newProduct").value = "";
-            display();
         }
 
         function editProduct(index) {

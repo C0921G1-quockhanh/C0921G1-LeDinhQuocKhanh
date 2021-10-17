@@ -6,26 +6,30 @@
 </head>
 <body>
     <h2>Type anything slowly</h2>
-    <textarea rows="5" cols="50" onkeydown="keydownFunction()" id="demo"></textarea>
+    <textarea rows="5" cols="50" id="demo"></textarea>
 
     <script>
         let str = "TÔI LÀ MỘT ĐỨA NGỐC!!";
         let index = 0;
         let result = "";
 
-        function keydownFunction() {
-            if (index > str.length) {
+        document.getElementById("demo").addEventListener("keydown",keydownFunction);
+        function keydownFunction(e) {
+            e.preventDefault();
+            if (index === str.length) {
                 index = 0;
+                result = "";
             }
             for (let i = 0; i < str.length; i++) {
                 if (index === i) {
                     index++;
-                    return result += str[i];
+                    result += str[i];
+                    break;
                 }
             }
-
+            document.getElementById("demo").value = result;
         }
-        document.getElementById("demo").value = result;
+
 
     </script>
 </body>
