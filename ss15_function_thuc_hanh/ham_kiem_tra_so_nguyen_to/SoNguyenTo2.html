@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+       function isPrime(number) {
+           let soNguyenTo = true;
+           if (number >= 2) {
+               for (let i = 2; i < number; i++) {
+                   if (number % i === 0) {
+                       soNguyenTo = false;
+                       break;
+                   }
+               }
+           } else {
+               soNguyenTo = false;
+           }
+           if (soNguyenTo) {
+               alert(number + " là số nguyên tố.");
+           } else {
+               alert(number + " không phải là số nguyên tố.");
+           }
+       }
+
+       let randomNumber = parseInt(prompt("Enter a number: "));
+       isPrime(randomNumber);
+
+    </script>
+</body>
+</html>
