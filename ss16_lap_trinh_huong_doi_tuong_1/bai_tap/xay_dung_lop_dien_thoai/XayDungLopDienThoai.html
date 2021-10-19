@@ -7,9 +7,102 @@
 <body>
     <script>
         class Mobile {
-            constructor(battery,draft,arrived,sent) {
+            constructor(id,name,percent) {
+                this.id = id;
+                this.name = name;
+                this.battery = percent;
+                this.message = "";
+                this.arrivedBox = "";
+                this.sentBox = "";
+                this.phoneStatus = true;
             }
+
+            checkPhoneStatus() {
+                if (this.phoneStatus) {
+                    if (this.battery > 0) {
+                        if (this.battery <= 20) {
+                            alert("Your battery is low. You need to charge it immediately!");
+                        } else if (this.battery <= 100) {
+                            alert("Your battery is high. You can enjoy it now!");
+                        }
+                    }
+                } else {
+                    alert("Your phone is off now!");
+                }
+            }
+
+            turnOnOff() {
+                this.phoneStatus = !this.phoneStatus;
+            }
+
+            chargeBattery() {
+                for (let i = this.battery; i < 100; i++) {
+                    this.battery += 5;
+                    console.log(this.battery);
+                }
+            }
+
+            typeMessage(message) {
+                if (!this.phoneStatus) {
+                    return
+                }
+                this.message = message;
+                this.reduceBattery();
+            }
+
+            sendMessage(message,mobile) {
+                if (!this.phoneStatus) {
+                    return
+                }
+                this.sentBox = message;
+                mobile.typeMessage(message);
+                this.reduceBattery();
+            }
+
+            getMessage() {
+                if (!this.phoneStatus) {
+                    return
+                }
+                this.arrivedBox = this.message;
+                this.reduceBattery();
+                return this.message;
+            }
+
+            getArrivedMessage() {
+                if (!this.phoneStatus) {
+                    return
+                }
+                this.reduceBattery();
+                return this.arrivedBox;
+            }
+
+            getSentMessage() {
+                if (!this.phoneStatus) {
+                    return
+                }
+                this.reduceBattery();
+                return this.sentBox;
+            }
+
+            reduceBattery() {
+                this.battery -= 1;
+            }
+
         }
+
+        let nokiaC30 = new Mobile(1,"Nokia",20);
+        let iphoneX = new Mobile(2,"Iphone",60);
+
+        nokiaC30.sendMessage("Hi Tui là Khánh!",iphoneX);
+        console.log(iphoneX.getMessage());
+
+        console.log(nokiaC30.message);
+        console.log(iphoneX.getArrivedMessage());
+        console.log(nokiaC30.getSentMessage());
+
+        console.log(nokiaC30.battery);
+        console.log(iphoneX.battery);
+
     </script>
 </body>
 </html>
