@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        class MoveImage {
+            constructor(image,size,top,left) {
+                this.image = image;
+                this.size = size;
+                this.top = top;
+                this.left = left;
+            }
+            getImageElement() {
+                return "<img src = " + this.image + " width = '" + this.size + "px'" + " height = '" + this.size + "px'" +
+                        " style = 'position: absolute; left: " + this.left + "px; top: " + this.top + "px'>";
+            }
+            getVerticalPosition() {
+                return this.top;
+            }
+            getHorizontalPosition() {
+                return this.left;
+            }
+            moveUp() {
+                if (this.getVerticalPosition() >= 20) {
+                    this.top -= 20;
+                }
+            }
+            moveDown() {
+                if (this.getVerticalPosition() <= window.innerHeight - this.size) {
+                    this.top += 20;
+                }
+            }
+            moveRight() {
+                if (this.getHorizontalPosition() <= window.innerWidth - this.size) {
+                    this.left += 20;
+                }
+            }
+            moveLeft() {
+                if (this.getHorizontalPosition() >= 20) {
+                    this.left -= 20;
+                }
+            }
+
+
+        }
+
+        let dragonImage = new MoveImage("images/dragon.jpg",70,50,50);
+        document.write(dragonImage.getImageElement());
+
+        for (let i = 0; i < 10; i++) {
+            dragonImage.moveRight();
+            dragonImage.moveDown();
+        }
+        document.write(dragonImage.getImageElement());
+
+        for (let i = 0; i < 5; i++) {
+            dragonImage.moveLeft();
+            dragonImage.moveUp();
+        }
+        document.write(dragonImage.getImageElement());
+
+    </script>
+</body>
+</html>
