@@ -5,6 +5,25 @@
     <title>Title</title>
 </head>
 <body>
+    <script>
+        let str = prompt("Enter a string: ");
+        let newStr = [];
+        let count = 0;
 
+        for (let i=0; i<str.length; i++) {
+            let checkWord = true;
+            for (let j=i+1; j<str.length; j++){
+                if (str[i] === str[j]){
+                    checkWord = false;
+                    break;
+                }
+            }
+            if (checkWord) {
+                newStr.push(str[i]);
+                count += 1;
+            }
+        }
+        document.write("Số lượng kí tự khác nhau là " + count + " và giá trị các kí tự là " + newStr.join(" , "));
+    </script>
 </body>
 </html>
