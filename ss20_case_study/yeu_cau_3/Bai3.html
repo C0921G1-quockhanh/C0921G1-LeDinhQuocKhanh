@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let random = parseInt(prompt("Enter a number: "));
+
+        let numeratorArr = new Array(random);
+        for (let i=0; i<numeratorArr.length; i++){
+            numeratorArr[i] = Math.floor((Math.random()*10)+1);
+        }
+        document.write("Giá trị mảng tử số là " + numeratorArr.join(" / "));
+
+        let denominatorArr = new Array(random);
+        for (let i=0; i<denominatorArr.length; i++){
+            denominatorArr[i] = Math.floor((Math.random()*15)+1);
+        }
+        document.write("<br>Giá trị mảng mẫu số là " + denominatorArr.join(" / "));
+
+        let fractionArr = [];
+        let fraction = 0;
+        for (let i=0; i<numeratorArr.length; i++){
+            fraction = (numeratorArr[i] / denominatorArr[i]).toFixed(2);
+            fractionArr.push(fraction);
+        }
+        document.write("<br>Giá trị mảng phân số là " + fractionArr.join(" / "));
+
+        let indexMaxFraction = 0;
+        let maxFraction = fractionArr[0]
+        for (let i=1; i<fractionArr.length; i++) {
+            if (maxFraction < fractionArr[i]){
+                maxFraction = fractionArr[i];
+                indexMaxFraction = i;
+            }
+        }
+        document.write("<br>Giá trị phân số lớn nhất là " + maxFraction + "  tại vị trí thứ " + indexMaxFraction);
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let random = parseInt(prompt("Enter a number: "));
+        let arr = new Array(random);
+        for(let i=0; i<arr.length; i++){
+            arr[i] = Math.floor((Math.random()*50)+1);
+        }
+        document.write("Mảng được tạo ngẫu nhiên là " + arr.join(" "));
+
+        let sortedArr = arr.sort(function (a,b) {
+            return a-b;
+        })
+        document.write("<br> Mảng sau khi được sắp xếp theo thứ tự tăng dần là " + sortedArr.join(" "));
+
+        let prefixSum = [];
+        let sum = 0;
+        for (let i=0; i<sortedArr.length; i++){
+            sum += sortedArr[i];
+            prefixSum.push(sum);
+        }
+        document.write("<br> Giá trị mảng con theo đề bài là " + prefixSum.join(" "));
+    </script>
+</body>
+</html>

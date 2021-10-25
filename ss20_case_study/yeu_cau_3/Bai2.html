@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let randomA = parseInt(prompt("Enter a number: "));
+        let randomB = parseInt(prompt("Enter a number: "));
+        let arrA = new Array(randomA);
+        let arrB = new Array(randomB);
+
+        for (let i=0; i<arrA.length; i++) {                     //tạo 2 mảng A,B có giá trị random
+            arrA[i] = Math.floor((Math.random()*15)+1);
+        }
+        for (let i=0; i<arrB.length; i++) {
+            arrB[i] = Math.floor((Math.random()*15)+1);
+        }
+        document.write("Giá trị mảng A là " + arrA.join(" "));
+        document.write("<br>Giá trị mảng B là " + arrB.join(" "));
+
+        let newArrB = [];                                       //tạo mảng mới của B mà không có phần tử trùng nhau
+
+        for (let i=0; i<arrB.length; i++) {
+            let checkNum = true;
+            for (let j=i+1; j<arrB.length; j++) {
+                if (arrB[i] === arrB[j]){
+                    checkNum = false;
+                    break;
+                }
+            }
+            if (checkNum) {
+                newArrB.push(arrB[i]);
+            }
+        }
+        document.write("<br>Mảng B sau khi đã lọc các phần tử trùng nhau là " + newArrB.join(" "));
+
+        let missingValue = [];                                  //kiểm tra phần tử xuất hiện ở mảng B nhưng không xuất hiện ở A
+        for (let i=0; i<newArrB.length; i++){
+            let checkNum = true;
+            for (let j=0; j<arrA.length; j++){
+                if (newArrB[i] === arrA[j]){
+                    checkNum = false;
+                    break;
+                }
+            }
+            if (checkNum) {
+                missingValue.push(newArrB[i]);
+            }
+        }
+        document.write("<br>Các phần tử xuất hiện ở mảng B nhưng không xuất hiện ở mảng A là " + missingValue.join(" "));
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+        th {
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <table border="2" cellpadding="5" cellspacing="0">
+        <tr>
+            <th colspan="3">Add New Beverages</th>
+        </tr>
+        <tr>
+            <td><input type="text" placeholder="New Beverage" id="newBeverage"></td>
+            <td><input type="number" placeholder="Beverage Price" id="beveragePrice"></td>
+            <td><input type="button" value="Add Beverage" onclick="addBeverage()"></td>
+        </tr>
+    </table>
+    <p id="beverage"></p>
+
+    <script>
+        let beverageList = ["Cafe", "Orange Juice", "Carrot Juice", "Tomato Juice", "Water", "Coconut"];
+        let beveragePrice = [35000,40000,30000,30000,15000,45000];
+        display();
+        function display() {
+            let tableString = "<table border='2' cellspacing='0' cellpadding='5'>" +
+                "<tr><th colspan='6'>Display All Beverages</th></tr>" +
+                "<tr>" +
+                "<td>Index</td>" +
+                "<td>Beverage Name</td>" +
+                "<td>Price</td>" +
+                "<td>Quantity</td>" +
+                "<td>Edit Beverage</td>" +
+                "<td>Delete Beverage</td>" +
+                "</tr>";
+            for (let i=0; i<beverageList.length; i++){
+                tableString += "<tr>" +
+                        "<td>" + (i+1) + "</td>" +
+                        "<td>" + beverageList[i] + "</td>" +
+                        "<td>" + beveragePrice[i] + "</td>" +
+                        "<td><input type='number' id='quantity-"+i+"'></td>" +
+                        "<td><input type='button' value='Edit Beverage' onclick='editBeverage("+i+")'></td>" +
+                        "<td><input type='button' value='Delete Beverage' onclick='deleteBeverage("+i+")'></td>" +
+                        "</tr>";
+            }
+            tableString += "<tr>" +
+                    "<td><input type='button' value='Calculate Total' onclick='calculateTotal()'></td>" +
+                    "<td colspan='5'><input type='text' id='totalPrice' size='78'></td>" +
+                    "</tr>" + "</table>";
+            document.getElementById("beverage").innerHTML = tableString;
+        }
+        
+        function addBeverage() {
+            let addNew = true;
+            let newBeverage = document.getElementById("newBeverage").value;
+            let newPrice = document.getElementById("beveragePrice").value;
+
+            beveragePrice.push(newPrice);
+
+            if (newBeverage !== ""){
+                for (let i=0; i<beverageList; i++){
+                    if (newBeverage === beverageList[i]){
+                        addNew = false;
+                        break;
+                    }
+                }
+            } else {
+                addNew = false;
+            }
+            if (addNew){
+                beverageList.push(newBeverage);
+                display();
+            } else {
+                alert("Please check the name of the beverage!");
+            }
+
+            document.getElementById("newBeverage").value = "";
+            document.getElementById("beveragePrice").value = 0;
+        }
+
+        function editBeverage(index) {
+            let newName = prompt("Enter the new name of the beverage: ");
+            if (newName !== "" && newName !== beverageList[index]){
+                beverageList[index] = newName;
+            }
+            display();
+        }
+
+        function deleteBeverage(index) {
+            let conf = confirm("Are you sure to delete this beverage?");
+            if (conf) {
+                beverageList.splice(index,1);
+                beveragePrice.splice(index,1);
+            }
+            display();
+        }
+
+        function calculateTotal() {
+            let total = 0;
+            for (let i=0; i<beverageList.length; i++){
+                let quantity = document.getElementById("quantity-" + i ).value;
+
+                if (quantity === "") {
+                    quantity = "0";
+                }
+                total += beveragePrice[i] * parseInt(quantity);
+            }
+            document.getElementById("totalPrice").value = total;
+        }
+
+    </script>
+</body>
+</html>
