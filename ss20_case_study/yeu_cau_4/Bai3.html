@@ -5,6 +5,26 @@
     <title>Title</title>
 </head>
 <body>
-
+    <script>
+        let finalStr = [];
+        let commonCharacterCount = 0;
+        let strA = prompt("Enter the first string: ");
+        let strB = prompt("Enter the second string: ");
+         for (let i=0; i<strA.length; i++){
+             let checkWord = false;
+             for (let j=0; j<strB.length; j++){
+                 if (strA[i] === strB[j]){
+                     checkWord = true;
+                     strB = strB.substring(0,j) + strB.substring(j+1);
+                     break;
+                 }
+             }
+             if (checkWord){
+                 finalStr.push(strA[i]);
+                 commonCharacterCount += 1;
+             }
+         }
+         document.write("Các kí tự chung là " + finalStr.join(" / ") + " và số lượng kí tự chung là " + commonCharacterCount);
+    </script>
 </body>
 </html>

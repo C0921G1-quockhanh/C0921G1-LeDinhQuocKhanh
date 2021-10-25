@@ -5,6 +5,35 @@
     <title>Title</title>
 </head>
 <body>
+    <script>
+        let oldStr = prompt("Enter a name: ");
+        let newStr = "";
 
+        document.write("Tên ban đầu là " + oldStr);
+
+        for(let i=0; i<oldStr.length; i++){
+            if (oldStr[i] !== " "){
+                newStr += oldStr[i];
+            } else {
+                if (oldStr[i+1] !== " "){
+                    newStr += oldStr[i];
+                }
+            }
+        }
+
+        let newStrLowerCase = newStr.toLowerCase();
+        newStrLowerCase = " " + newStrLowerCase;
+
+        let finalStr = "";
+        for (let i=0; i<newStrLowerCase.length; i++){
+            if (newStrLowerCase[i-1] === " "){
+                finalStr += newStrLowerCase[i].toUpperCase();
+            } else {
+                finalStr += newStrLowerCase[i];
+            }
+        }
+        document.write("<br>Tên sau khi được chuẩn hóa ký tự là " + finalStr);
+
+    </script>
 </body>
 </html>
