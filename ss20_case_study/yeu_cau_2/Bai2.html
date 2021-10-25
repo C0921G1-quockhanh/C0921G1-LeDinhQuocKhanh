@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        th {
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <table border="2" cellpadding="5" cellspacing="0">
+        <tr>
+            <th colspan="3">Vowels Or Consonants</th>
+        </tr>
+        <tr>
+            <td><input type="text" placeholder="Enter an character" id="character"></td>
+            <td><input type="text" placeholder="Vowels or Consonants" id="result"></td>
+            <td><input type="button" value="Let's check!" onclick="findResult()"></td>
+        </tr>
+    </table>
+
+    <script>
+        let result = "";
+        function findResult() {
+            let character = document.getElementById("character").value;
+            switch (character) {
+                case 'o':
+                    result = 'Vowels';
+                    break;
+                case 'u':
+                    result = 'Vowels';
+                    break;
+                case 'i':
+                    result = 'Vowels';
+                    break;
+                case 'a':
+                    result = 'Vowels';
+                    break;
+                case 'e':
+                    result = 'Vowels';
+                    break;
+                case 'O':
+                    result = 'Vowels';
+                    break;
+                case 'U':
+                    result = 'Vowels';
+                    break;
+                case 'I':
+                    result = 'Vowels';
+                    break;
+                case 'A':
+                    result = 'Vowels';
+                    break;
+                case 'E':
+                    result = 'Vowels';
+                    break;
+                default:
+                    result = 'Consonants';
+            }
+            document.getElementById("result").value = result;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table{
+            border-collapse: collapse;
+            font-style: italic;
+        }
+        th {
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <table border="2" cellspacing="0" cellpadding="5">
+        <tr>
+            <th colspan="4">Bảng tính lương của nhân viên:</th>
+        </tr>
+        <tr>
+            <td><input type="number" placeholder="Lương của nhân viên" id="beforeTax"></td>
+            <td><input type="number" placeholder="thuế thu nhập" id="tax"></td>
+            <td><input type="number" placeholder="Thu nhập sau thuế" id="afterTax"></td>
+            <td><input type="button" value="Calculate" onclick="calculateSalary()"></td>
+        </tr>
+    </table>
+
+    <script>
+        let tax = 0;
+        let moneyAfterTax = 0;
+        function calculateSalary() {
+            let moneyBeforeTax = document.getElementById("beforeTax").value;
+
+            if (moneyBeforeTax > 0) {
+                if (moneyBeforeTax < 7000000) {
+                    tax = 5/100;
+                    moneyAfterTax = moneyBeforeTax - moneyBeforeTax * tax;
+
+                } else if (moneyBeforeTax < 15000000) {
+                    tax = 10/100;
+                    moneyAfterTax = moneyBeforeTax - moneyBeforeTax * tax;
+                } else {
+                    tax = 20/100;
+                    moneyAfterTax = moneyBeforeTax - moneyBeforeTax * tax;
+                }
+            } else {
+                alert("Please check the salary of that employee!");
+            }
+            document.getElementById("tax").value = tax;
+            document.getElementById("afterTax").value = moneyAfterTax;
+        }
+    </script>
+</body>
+</html>
