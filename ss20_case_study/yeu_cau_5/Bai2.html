@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let rows = parseInt(prompt("Enter a number: "));
+        let cols = parseInt(prompt("Enter a number: "));
+
+        let arr = new Array(rows);
+        for (let i=0; i<arr.length; i++){
+            arr[i] = new Array(cols);
+        }
+
+        for (let i=0; i<arr.length; i++){                                       //tạo mảng 2 chiều
+            for (let j=0; j<arr[i].length; j++){
+                arr[i][j] = Math.floor((Math.random()*50)+1);
+            }
+        }
+        console.log(arr);
+
+        let primeArr = [];
+        let finalPrimeArr = [];
+        let countPrime = 0;
+        function isPrime(array) {                                               //hàm xác định số nguyên tố
+            for (let i=0; i<array.length; i++){
+                for (let j=0; j<array[i].length; j++){
+                    let checkPrime = true;
+                    if (array[i][j] >= 2){
+                        for (let k=2; k<array[i][j]; k++){
+                            if (array[i][j] % k === 0){
+                                checkPrime = false;
+                                break;
+                            }
+                        }
+                    } else {
+                        checkPrime = false;
+                    }
+                    if (checkPrime){
+                        primeArr.push(array[i][j]);
+                    }
+                }
+            }
+            console.log(primeArr);                                              //kết quả trả về có giá trị trùng nhau
+
+            for (let i=0; i<primeArr.length; i++){                              //loại bỏ giá trị trùng nhau
+                let checkWord = true;
+                for (let j=i+1; j<primeArr.length; j++){
+                    if (primeArr[i] === primeArr[j]){
+                        checkWord = false;
+                        break;
+                    }
+                }
+                if (checkWord){
+                    finalPrimeArr.push(primeArr[i]);
+                    countPrime += 1;
+                }
+            }
+            console.log(finalPrimeArr);
+            console.log(countPrime);
+        }
+
+        isPrime(arr);
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let rows = parseInt(prompt("Enter a number: "));
+        let cols = parseInt(prompt("Enter a number: "));
+
+        let arr = new Array(rows);
+        for (let i=0; i<arr.length; i++){
+             arr[i] = new Array(cols);
+        }
+        for (let i=0; i<arr.length; i++){                                           //Tạo giá trị cho mảng 2 chiều
+            for (let j=0; j<arr[i].length; j++){
+                arr[i][j] = Math.floor((Math.random()*50)+1);
+            }
+        }
+        console.log(arr);
+
+        let sumEven = 0;
+        let evenArr = [];
+
+        for (let i=0; i<arr.length; i++){                                           //yêu cầu đề bài
+            for (let j=0; j<arr[i].length; j++){
+                if (arr[i][j] % 2 === 0){
+                    evenArr.push(arr[i][j]);
+                    sumEven += arr[i][j];
+                }
+            }
+        }
+
+        document.write("<br>Các phần tử số chẵn là " + evenArr.join(" / "));
+        document.write("<br>Tổng các phần tử đó là " + sumEven);
+
+    </script>
+</body>
+</html>
