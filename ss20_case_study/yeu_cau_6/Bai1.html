@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+        td{
+            border: 1px solid black;
+        }
+        th{
+            border: 1px solid black;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <p id="funnyGame"></p>
+    <script>
+        let selectOption = parseInt(prompt("Bạn có 2 lựa chọn: " + "<br>1. Bạn muốn tự chọn số" + "<br>Hệ thống tự random"));
+        let yourLotteryList = new Array(6);
+        let vipLotteryList = [9,19,32,40,45,51];
+
+        display();
+        function display() {
+            let tableString = "<table border='2' cellspacing='0' cellpadding='5'>" +
+                    "<tr><th colspan='7'>Xổ số CodeGym</th></tr>" +
+                    "<tr>" +
+                    "<td>your_lottery_list</td>";
+            for (let i=0; i<yourLotteryList.length; i++){
+                tableString += "<td><input type='number' value='"+yourLotteryList[i]+"'></td>"
+            }
+            tableString += "</tr>" +
+                    "<tr>" +
+                    "<td>vip_lottery_list</td>";
+            for (let i=0; i<vipLotteryList.length; i++){
+                tableString += "<td><input type='number' id='vip-"+i+"'></td>";
+            }
+            tableString += "</tr>" +
+                    "<tr>" +
+                    "<td><input type='button' value='Mua vé' onclick='buyLottery()'></td>" +
+                    "<td><input type='button' value='Xem kết quả' onclick='getMoney()'></td>" +
+                    "</tr>" +
+                    "</table>";
+            document.getElementById("funnyGame").innerHTML = tableString;
+        }
+
+        function buyLottery() {
+            switch (selectOption) {
+                case 1:
+                    for (let i=0; i<yourLotteryList.length; i++){
+                        let number = parseInt(prompt("Enter a number: "));
+                        yourLotteryList[i] = number;
+                    }
+                    break;
+                case 2:
+                    for (let i=0; i<yourLotteryList.length; i++){
+                        yourLotteryList[i] = Math.floor(Math.random()*99);
+                    }
+                    break;
+            }
+            display();
+        }
+
+        function getMoney() {
+            for(let i=0; i<vipLotteryList.length; i++){
+                document.getElementById("vip-" + i).value = vipLotteryList[i];
+            }
+            let countLotteryElement = 0;
+            for (let i=yourLotteryList.length-1; i>=0; i--){
+                if (yourLotteryList[i] !== vipLotteryList[i]){
+                    break;
+                }
+                countLotteryElement += 1;
+            }
+            console.log(countLotteryElement);
+            switch (countLotteryElement) {
+                case 6:
+                    alert("Bạn đã trúng số tiền là 1.200.000.000 VNĐ");
+                    break;
+                case 5:
+                    alert("Bạn đã trúng số tiền là 500.000.000 VNĐ");
+                    break;
+                case 4:
+                case 3:
+                    alert("Bạn đã trúng số tiền là 200.000 VNĐ");
+                    break;
+                default:
+                    alert("Chúc bạn may mắn lần sau");
+            }
+        }
+
+
+    </script>
+</body>
+</html>
