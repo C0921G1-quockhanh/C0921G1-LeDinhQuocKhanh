@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let inputNumber1 = parseInt(prompt("Enter first number: "));
+        let inputNumber2 = parseInt(prompt("Enter second number: "));
+        let number1 = 0;
+        let number2 = 0;
+
+        function isPositive(num1,num2) {
+            let checkPositive = true;
+            if (num1 < 0 || num2 < 0) {
+                checkPositive = false;
+            }
+            return checkPositive;
+        }
+
+        if (isPositive(inputNumber1,inputNumber2)){
+            number1 = inputNumber1;
+            number2 = inputNumber2;
+        } else {
+            alert("Bạn hãy nhập chính xác hai số nguyên dương");
+        }
+        console.log(number1);
+        console.log(number2);
+        
+        function getSumDivisorOfNumber(num) {
+            let sumDivisor = 0;
+            for (let i=1; i<num; i++) {
+                if (num % i === 0){
+                    sumDivisor += i;
+                }
+            }
+            return sumDivisor;
+        }
+        console.log(getSumDivisorOfNumber(number1));
+        console.log(getSumDivisorOfNumber(number2));
+
+        function kiemTraHaiSoThanThiet(num1,num2) {
+            if (getSumDivisorOfNumber(num1) === num2 && getSumDivisorOfNumber(num2) === num1){
+                return "true";
+            } else {
+                return "false";
+            }
+        }
+
+        console.log(kiemTraHaiSoThanThiet(number1,number2));
+
+    </script>
+</body>
+</html>

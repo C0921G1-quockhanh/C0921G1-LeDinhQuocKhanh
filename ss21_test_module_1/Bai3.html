@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <p id="bookManagement"></p>
+    <input type="button" value="Add New Book" onclick="addNewBook()">
+
+    <script>
+        class Book {
+            constructor(id,name,year,number) {
+                this.id = id;
+                this.name = name;
+                this.year = year;
+                this.number = number;
+                this.status = true;
+            }
+            getId(){
+                return this.id;
+            }
+            setId(id){
+                this.id = id;
+            }
+            getName(){
+                return this.name;
+            }
+            setName(name){
+                this.name = name;
+            }
+            getYear(){
+                return this.year;
+            }
+            setYear(year){
+                this.year = year;
+            }
+            getNumber(){
+                return this.number;
+            }
+            setNumber(number){
+                this.number = number;
+            }
+            setStatus(){
+                if (this.number > 0) {
+                    this.status = true;
+                }
+            }
+            getStatus(){
+                return this.status;
+            }
+            addExistedBook(quantity){
+                this.number += quantity;
+            }
+            borrowExistedBook(quantity){
+                this.number -= quantity;
+            }
+        }
+
+        function addNewBook() {
+            let newId = prompt("Enter the new Id of the book: ");
+            let newName = prompt("Enter the new name of the book: ");
+            let newYear = prompt("Enter the year that released the book: ");
+            let newNumber = prompt("Enter the quantity of the book: ");
+            let book = new Book(newId,newName,newYear,newNumber);
+            bookList.push(book);
+            display(bookList);
+        }
+
+        function display(arrayBook) {
+            let tableString = "<table border='2' cellpadding='5' cellspacing='0'>" +
+                    "<tr><th colspan='5'><h2>Quản lí sách</h2></th></tr>" +
+                    "<tr>" +
+                    "<th>Mã số sách</th>" +
+                    "<th>Tên sách</th>" +
+                    "<th>Năm xuất bản</th>" +
+                    "<th>Số quyển</th>"+
+                    "<th>Tình trạng</th>" +
+                    "</tr>";
+            for (let i=0; i<arrayBook.length; i++){
+                tableString += "<tr>" +
+                        "<td>" + arrayBook[i].getId() + "</td>" +
+                        "<td>" + arrayBook[i].getName() + "</td>" +
+                        "<td>" + arrayBook[i].getYear() + "</td>" +
+                        "<td>" + arrayBook[i].getNumber() + "</td>" +
+                        "<td><input type='text' id='book-"+i+"'></td>" +
+                        "</tr>";
+            }
+            tableString += "<tr>" +
+                    "<td><input type='button' value='Thêm sách đã có' onclick='addExistedBook()'></td>" +
+                    "<td><input type='button' value='Mượn sách' onclick='borrowExistedBook()'></td>" +
+                    "</tr>" +
+                    "</table>";
+            document.getElementById("bookManagement").innerHTML = tableString;
+        }
+
+
+        let bookList = [];
+        let book1 = new Book(12345,"Toán",2000,3);
+        let book2 = new Book(23456,"Văn",1998,4);
+        let book3 = new Book(37456,"Tiếng Anh",1999,5);
+
+        bookList.push(book1);
+        bookList.push(book2);
+        bookList.push(book3);
+
+        display(bookList);
+
+        for (let i=0; i<bookList.length; i++){
+            bookList[i].setStatus();
+            let statusBook = bookList[i].getStatus();
+            document.getElementById("book-" + i).value = statusBook;
+        }
+    </script>
+</body>
+</html>;

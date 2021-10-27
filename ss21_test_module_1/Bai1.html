@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let inputNumberOfElement = parseInt(prompt("Enter a number: "));
+        let numberOfElement = 0;
+
+        if (0 <= inputNumberOfElement && inputNumberOfElement <= 50) {
+            numberOfElement = inputNumberOfElement;
+        } else {
+            alert("Please type a different number");
+        }
+        console.log(numberOfElement);
+
+        let randomArr = new Array(numberOfElement);
+        for (let i=0; i<randomArr.length; i++){
+            randomArr[i] = Math.floor(Math.random()*20);
+        }
+        console.log(randomArr);
+
+        let displayArr = [];
+        for (let i=0; i<randomArr.length; i++){
+            displayArr.push(randomArr[i]);
+        }
+        document.write("Mảng được tạo ngẫu nhiên là " + displayArr.join(" / "));
+
+        let count = 0;
+        let sumOdd = 0;
+        let resultArr = [];
+
+        function isOdd(num) {
+            let checkOdd = true;
+            if (num % 2 === 0){
+                checkOdd = false;
+            }
+            return checkOdd;
+        }
+
+        function isIndexEven(index) {
+            let checkEven = true;
+            if (index % 2 !== 0){
+                checkEven = false;
+            }
+            return checkEven;
+        }
+
+        for (let i=0; i<randomArr.length; i++){
+            if (isOdd(randomArr[i]) && isIndexEven(i)) {
+                sumOdd += randomArr[i];
+                count += 1;
+                resultArr.push(randomArr[i]);
+            }
+        }
+
+        document.write("<br>Các phần tử số lẻ tại vị trí số chẵn là " + resultArr.join(" / "));
+        document.write("<br>Giá trị trung bình của các số lẻ tại vị trí chẵn là " + sumOdd / count);
+
+    </script>
+</body>
+</html>
